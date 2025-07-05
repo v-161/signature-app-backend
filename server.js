@@ -18,7 +18,10 @@ connectDB();
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:5173', // Adjust for production if needed
+    origin: [
+        'http://localhost:5173', // For local development
+        'https://signature-app-frontend-nine.vercel.app' // For Vercel deployment
+    ],
     credentials: true
 }));
 app.use(express.json());
